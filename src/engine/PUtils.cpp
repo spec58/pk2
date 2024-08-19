@@ -37,10 +37,6 @@ void Setcwd() {
 	
 	}
 
-	#ifndef _WIN32
-	chdir(".." PE_SEP "res");
-	#endif
-
 	path = getcwd(NULL, 0);
 	if (path) {
 		
@@ -168,13 +164,7 @@ int RenameDir(std::string old_path, std::string new_path) {
 #endif
 
 void GetLanguage(char* lang) {
-
-	#if (SDL_COMPILEDVERSION < 2014)
-		#warning SDL version must be at least 2.0.14 to support locale
-		const char* locale = "en";
-	#else
-		const char* locale = SDL_GetPreferredLocales()->language;
-	#endif
+	const char* locale = "en";
 
 	lang[0] = SDL_tolower(locale[0]);
 	lang[1] = SDL_tolower(locale[1]); 

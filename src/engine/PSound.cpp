@@ -522,7 +522,7 @@ int init(int buffer_size, bool multi_thread) {
 		channel_playing[i] = false;
 	}
 
-	Mix_Init(MIX_INIT_MOD | MIX_INIT_MP3 | MIX_INIT_OGG);
+	Mix_Init(MIX_INIT_FLAC | MIX_INIT_MP3 | MIX_INIT_OGG);
 	Mix_AllocateChannels(CHANNELS);
 	Mix_ChannelFinished(channelDone);
 

@@ -248,7 +248,7 @@ int Play_Music() {
 	if (mapmus.Find())
 		goto found;
 	
-	mapmus.SetFile("map.xm");
+	mapmus.SetFile("map.flac");
 	if (mapmus.Find())
 		goto found;
 	
@@ -272,7 +272,7 @@ int Play_Music() {
 	if (mapmus.Find())
 		goto found;
 	
-	mapmus.SetFile("map.xm");
+	mapmus.SetFile("map.flac");
 	
 	found:
 

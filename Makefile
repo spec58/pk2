@@ -1,8 +1,11 @@
 # Pekka Kana 2 by Janne Kivilahti from Piste Gamez (2003-2007)
 # https://pistegamez.net/game_pk2.html
 #
+# Libs required:
+# sudo apt install liblua5.3-dev libzip-dev
 # Makefile command:
-# "make" - Creates Pekka Kana 2 binary
+# "make -j 13" - Creates Pekka Kana 2 binary
+# "make CFLAGS=-DTSP -j 13" - Creates Pekka Kana 2 binary for TSP
 # "make clean" - Removes all objects, executables and dependencies
 
 # Compiler:
@@ -11,6 +14,9 @@ CXX = g++
 # Optimization:
 #CXXFLAGS += -g
 CXXFLAGS += -O3
+
+# Optimization for TSP:
+#CXXFLAGS += -mtune=cortex-a53 -mcpu=cortex-a53
 
 # Further optimization:
 #CXXFLAGS += -march=native -fno-exceptions -fno-rtti -flto 
@@ -31,8 +37,8 @@ CXXFLAGS += -DPK2_USE_ZIP $(shell pkg-config libzip --cflags)
 LDFLAGS += $(shell pkg-config libzip --libs)
 
 # Lua:
-CXXFLAGS += $(shell pkg-config lua5.4 --cflags)
-LDFLAGS += $(shell pkg-config lua5.4 --libs)
+CXXFLAGS += $(shell pkg-config lua5.3 --cflags)
+LDFLAGS += $(shell pkg-config lua5.3 --libs)
 
 # Portable (data is stored with resorces):
 CXXFLAGS += -DPK2_PORTABLE

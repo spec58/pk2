@@ -138,7 +138,7 @@ int MapClass::LoadVersion01(PFile::Path path){
 	strcpy(this->versio, PK2MAP_LAST_VERSION);
 	strcpy(this->palikka_bmp,"blox.bmp");
 	strcpy(this->taustakuva, "default.bmp");
-	strcpy(this->musiikki,   "default.xm");
+	strcpy(this->musiikki,   "default.flac");
 
 	strcpy(this->nimi,  "v01");
 	strcpy(this->tekija,"unknown");

@@ -136,8 +136,8 @@ int Screen_Ending_Init() {
 
 	}
 
-	if (PSound::start_music(PFile::Path("music" PE_SEP "intro.xm")) == -1)
-		PK2_Error("Can't load intro.xm");
+	if (PSound::start_music(PFile::Path("music" PE_SEP "intro.flac")) == -1)
+		PK2_Error("Can't load intro.flac");
 
 	PSound::set_musicvolume(Settings.music_max_volume);
 

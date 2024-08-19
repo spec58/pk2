@@ -86,8 +86,8 @@ int GameClass::Finnish() {
 	
 	this->level_clear = true;
 
-	if (PSound::start_music(PFile::Path("music" PE_SEP "hiscore.xm")) == -1)
-		PK2_Error("Can't find hiscore.xm");	
+	if (PSound::start_music(PFile::Path("music" PE_SEP "hiscore.flac")) == -1)
+		PK2_Error("Can't find hiscore.flac");	
 	
 	Episode->level_status[this->level_id] |= LEVEL_PASSED;
 	
@@ -371,12 +371,25 @@ int GameClass::Open_Map() {
 
 	if ( strcmp(map.musiikki, "") != 0 ) {
 
-		PFile::Path music_path = Episode->Get_Dir(map.musiikki);
+		// Replace .xm with .flac
+		char musiki[30] = {};
+		strcpy(musiki, map.musiikki);
+		for (int i = 0; i < 13; i++) {
+			if (musiki[i] == '.') {
+				musiki[i+1] = 'f';
+				musiki[i+2] = 'l';
+				musiki[i+3] = 'a';
+				musiki[i+4] = 'c';
+				break;
+			}
+		}
+
+		PFile::Path music_path = Episode->Get_Dir(musiki);
 
 		if (!FindAsset(&music_path, "music" PE_SEP)) {
 
-			PLog::Write(PLog::ERR, "PK2", "Can't find music \"%s\", trying \"song01.xm\"", music_path.GetFileName().c_str());
-			music_path = PFile::Path("music" PE_SEP "song01.xm");
+			PLog::Write(PLog::ERR, "PK2", "Can't find music \"%s\", trying \"song01.flac\"", music_path.GetFileName().c_str());
+			music_path = PFile::Path("music" PE_SEP "song01.flac");
 
 		}
 		

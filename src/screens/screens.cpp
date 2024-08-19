@@ -182,7 +182,7 @@ int Screen_First_Start() {
 	PDraw::image_load(game_assets, PFile::Path("gfx" PE_SEP "pk2stuff.bmp"), false);
 	PDraw::image_load(game_assets2, PFile::Path("gfx" PE_SEP "pk2stuff2.png"), false);
 
-	PSound::load_overlay_music(PFile::Path("music" PE_SEP "super.xm"));
+	PSound::load_overlay_music(PFile::Path("music" PE_SEP "super.flac"));
 
 	Load_SFX();
 

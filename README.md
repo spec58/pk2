@@ -35,7 +35,7 @@ To compile **Pekka Kana 2** into Debian GNU/Linux based distributions,
 you need the **SDL2**, **SDL2_image**, **SDL2_mixer**, **Zip** and **Lua** libraries installed on
 the system. To get everything you need, just run the following command on the terminal:
 
-    $ apt install build-essential libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libzip-dev liblua5.4-dev
+    $ apt install build-essential libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libzip-dev liblua5.3-dev
 
 Then run the "**make**" command inside the "**Pekka Kana 2**" directory.
 
